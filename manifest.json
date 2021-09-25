@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "b站视频直链工具(1080p)",
+  "version": "1.0.0",
+  "description": "b站视频直链工具(1080p)",
+  "browser_action": {
+    "default_icon": "./icons/64.png",
+    "default_popup": "index.html",
+    "default_title": "b站视频链接"
+  },
+  "content_security_policy": "script-src 'self' https://unpkg.com ; object-src 'self'",
+  "content_scripts": [
+    {
+      "js": [
+        "content_script.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "tabs", "activeTab"
+  ]
+}
